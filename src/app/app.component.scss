@@ -1,0 +1,99 @@
+@import '../global.scss';
+
+.navbar-container {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+
+    padding: 8px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: white;
+    z-index: 100;
+}
+.form-outline {
+    
+}
+
+.brand {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    left: 32px;
+    z-index: 0;
+}
+.navbar-brand {
+    z-index: -2;
+    width: 70px;
+}
+.nav-elements {
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+
+}
+.nav-item {
+    display: inline;
+    text-align: center;
+    width: 90px;
+}
+ul {
+    width: 100%;
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+}
+ul li {
+    display: inline;
+    text-align: center;
+}
+
+a {
+    display: inline-block;
+    width: 50%;
+    padding: .75rem 0;
+    margin: 0;
+    text-decoration: none;
+    color: #333;
+}
+.nav-link {
+    width: 50%;
+}
+hr.nav-underline {
+    height: .25rem;
+    width: 50%;
+    margin: 0;
+    background: $main-blue;
+    border: none;
+    border-radius: 50px;
+    transition: .2s ease-in-out;
+    opacity: 1 !important;
+}
+
+.site-container {
+    margin: 110px 0;
+    background-color: whitesmoke;
+}
+
+.navigation-pane {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+}
+.router-pane {
+    width: 100%;
+}
+
+
+.placeholder {
+    opacity: 0.70;
+}
+
+@media (max-width: 768px) {
+    
+}

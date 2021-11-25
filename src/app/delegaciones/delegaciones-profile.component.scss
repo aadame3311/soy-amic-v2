@@ -1,0 +1,173 @@
+.profile-img {
+    width: 150px;
+    height: 150px;
+    
+    background-size: cover;
+    background-position: center;
+    padding: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.33);
+}
+.delegacion-profile {
+    min-width: 1000px;
+}
+.profile-banner {
+    background: url('https://i.pinimg.com/originals/0b/a3/d6/0ba3d60362c7e6d256cfc1f37156bad9.jpg');
+    width: 100%;
+    min-width: 1000px;
+    height: 30vh;
+    position: absolute;
+    top: transform(top)-50px;
+    z-index: 0;
+    left: 0;
+    min-height: 300px;
+    background-size: cover;
+    background-position-y: 50%;
+}
+
+.grid-container {
+    z-index: 0;
+    top: 15vh;
+    position: relative;
+    margin-top: 16px;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    
+    grid-template-areas: 
+        "profile-header profile-header"
+        "about about "
+        "directivos directivos "
+        "posts convenios"
+    ;
+}
+.timestamp {
+    font-size: 10px;
+    opacity: 0.33;
+}
+.directivos-container ul { 
+    list-style-type: none; 
+    padding: 0 !important;
+}
+.directivo-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 32px;
+    margin-bottom: 8px;
+    background-color: white;
+    border: 0.5px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+.directivo-item .left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+}
+.directivo-item .right {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.profile-details {
+    height: 100%;
+    display: grid;
+    gap: 16px;
+    grid-template-rows: auto 1fr;
+}
+.profile-info {
+    font-size: 10px;
+    list-style-type: none;
+    margin-top: 8px;
+    padding: 8px;
+    
+}
+.about { grid-area: about; }
+.about-text { grid-column: 1 / span 3; }
+.directivos-container { grid-area: directivos; }
+.posts-container { grid-area: posts; }
+.section {
+    border-radius: 8px;
+    background-color: white;
+    border:0.5px solid rgba(0, 0, 0, 0.1);
+    padding: 64px;
+}
+.president { grid-area: president; } 
+.president .profile-img { margin: auto; }
+.profile-header {
+    font-weight: bold;
+    font-size: 2.5vw;
+    padding: 16px 0 16px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.profile-header button { margin-left: 16px; }
+
+.profile-info li { margin-bottom: 8px; }
+.profile-details .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    height: 100px;
+}
+.profile-details .body {
+    display: grid;
+    padding: 8px;
+    grid-template-columns: 0.35fr 0.35fr;
+}
+.field {
+    opacity: 0.5;
+    margin-right: 16px;
+}
+.value { font-weight: bold; }
+
+.header-title { 
+    font-size: 50px; 
+}
+.header-section {
+    grid-area: profile-header;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 0.10fr 1fr;
+    align-items: center;
+}
+
+.info-header { font-weight: bold; }
+
+.convenios { grid-area: convenios; }
+.convenio-list {
+    list-style-type: none;
+    padding: 0 !important;
+}
+
+.file-name {
+    display: inline-flex;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-areas: 
+            "profile-header profile-header"
+            "about about"
+            "directivos directivos"
+            "asociados asociados"
+            "posts posts"
+            "convenios convenios"
+        ;
+    }
+    .profile-details .header {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .profile-details {
+        grid-auto-rows: 600px;
+    }
+}

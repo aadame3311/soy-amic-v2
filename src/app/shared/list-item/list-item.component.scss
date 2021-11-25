@@ -1,0 +1,29 @@
+.list-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 32px;
+    margin-bottom: 16px;
+    background-color: white;
+    border: 0.5px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+.list-item.ls-sm {
+    padding: 8px !important;
+    font-size: 10px;
+}
+.list-item.ls-sm .right {
+    opacity: 0.33;
+}
+.list-item .left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+}
+.list-item .right {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}

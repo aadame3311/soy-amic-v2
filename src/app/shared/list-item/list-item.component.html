@@ -1,0 +1,9 @@
+<li *ngFor="let item of items" class="list-item">
+    <div class="left">
+        <div><i class="icon fas" [ngClass]="leftIconClass"></i></div>
+        <div class="ml-3 file-name">{{item.description}}</div>
+    </div>
+    <div class="right">
+        <i class="icon fas" [ngClass]="rightIconClass"></i>
+    </div>
+</li>

@@ -1,1 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.min.css";
+
+// Font Awesome
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+@import "~@fortawesome/fontawesome-free/scss/regular.scss";
+@import "~@fortawesome/fontawesome-free/scss/brands.scss";
+// MDB SCSS
+@import "~mdb-angular-ui-kit/assets/scss/mdb.scss";
+
+@import './global.scss';
+
+html, body {
+    width: 100vw;
+    min-width: 1000px;
+    background-color: whitesmoke !important; 
+    height: 100%;
+}
+body {  
+    margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.btn {
+    width: 10rem;
+}
+.small {
+    width: 10px;
+    height: 10px;
+}
+.small-btn {
+    width: 50px !important;
+    padding: 5px !important;
+}
+
+
+input.invalid-field {
+    border-bottom: 2px solid red !important;
+}
+
+input.invalid-field:active {
+    border-bottom: 2px solid red !important;
+}
+.field-error {
+    color: red;
+    font-size: 12px;
+    font-weight: bold;
+}

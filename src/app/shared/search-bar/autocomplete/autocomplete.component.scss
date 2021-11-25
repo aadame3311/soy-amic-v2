@@ -1,0 +1,64 @@
+@import '../../../../global.scss';
+
+.auto-complete-container {
+    position: fixed;
+    left: 30px;
+    top: 0px;
+    z-index: -1;
+}
+
+.autocomplete-fadein {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s linear 0s, opacity 300ms;
+}
+
+.autocomplete-fadeout {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 300ms, opacity 300ms;
+}
+.results-container {
+    position: relative;
+
+    padding: 60px 0 0 0;
+}
+.back-icon {
+    left: 25px;
+    top: 21px;
+    position: absolute;
+    font-size: 22px;
+    z-index: 1;
+}
+.back-icon:hover {
+    color: $main-blue;
+    cursor: pointer;
+}
+.auto-complete {
+    width: 300px;
+    
+    background-color: whitesmoke;
+    border-radius: 0 0 4px 4px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+.autocomplete-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 8px;
+    padding: 8px 32px;
+}
+.no-results {
+    text-align: center;
+    padding: 8px;
+}
+.autocomplete-item:hover {
+    cursor: pointer;
+    background-color: $main-blue;
+    color: whitesmoke;
+}

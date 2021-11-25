@@ -1,0 +1,29 @@
+
+
+.search-input {
+    background-color: rgba(0,0,0,0);
+    color: #1f1f1f;
+    border: none;
+    outline: none;
+    height: 30px;
+    transition: height 1s;
+    -webkit-transition: height 1s;
+}
+.search-input:focus {
+    height: 50px;
+}
+.icon {
+    color: #1f1f1f;
+}
+form {
+    z-index: 1;
+}
+.input {
+    z-index: 2;
+    width: 200px;
+    background-color: #e1e1e1;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    padding-left: 16px;
+}

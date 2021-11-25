@@ -1,0 +1,94 @@
+<div *ngIf="this.delegacionId !== '-1'" class="container delegacion-profile">
+    <div class="profile-banner">
+        
+    </div>
+    <div class="grid-container">
+
+        <div class="section section-container header-section">
+            <div [style.background-image]="'url(' + delegacion.imageSrc +')'" class="profile-img"></div>
+            <div class="profile-details">
+                <div class="header">
+                    <span>
+                        <div class="header-title">
+                            {{delegacion.name}}
+                        </div>
+                    </span>
+                    <div class="profile-actions">
+                        <button class="btn btn-outline-primary">Afiliate</button>
+                        <button *ngIf="featureEnabled()" 
+                                (click)='toggleLike($event, delegacion.id)'
+                                class="small-btn ml-3 btn" 
+                                [ngClass]='getFollowStyling("1", delegacion.id)'>
+                                
+                            <i-feather name="thumbs-up"></i-feather>
+                        </button>
+                    </div>
+                </div>
+                <div class="body">
+                    <div class="presidente">
+                        <span class="field">Presidente</span>
+                        <span class="value">Juan Perez</span>
+                    </div>
+                    <div class="phone">
+                        <span class="field">Telefono</span>
+                        <span class="value">{{delegacion.phone}}</span>
+                    </div>
+                    <div class="email">
+                        <span class="field">Correo</span>
+                        <span class="value">{{delegacion.email}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- doesn't need trackby here since we're not expecting many frquent changes if any-->
+        <div class="directivos-container">
+            <h2>Directivos</h2>
+            <ul>
+                <li *ngFor="let directivo of directivos" class="directivo-item">
+                    <div class="left">
+                        <i class="icon fas fa-user"></i>
+                        <div class="ml-3">
+                            {{directivo.name}}
+                        </div>
+                    </div>
+                    <div class="right">
+                        {{directivo.position}}
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="section about">
+            <h2>Acerca de</h2>    
+            <div class="about-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
+                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
+        </div>
+
+        
+        
+        <!--display only 5 most recent posts-->
+        <div class="posts-container">
+            <h1>Noticias</h1>
+            <app-list-item
+                [items] = "posts"
+                [leftIconClass] = "'fa-hashtag'"
+                ></app-list-item>
+        </div>
+
+        <div class="convenios">
+            <h1>Convenios</h1>
+            <ul class="convenio-list">
+                <app-list-item
+                    [items] = "convenios"
+                    [leftIconClass] = "'fa-file-pdf'"
+                    [rightIconClass] = "'fa-download'"
+                ></app-list-item>
+            </ul>
+        </div>
+    </div>
+</div>

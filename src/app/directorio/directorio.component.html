@@ -1,0 +1,69 @@
+
+
+<form  class="md-form" #form="ngForm" (ngSubmit)="searchSubmit(form)">
+    <!-- Search form -->
+    <div class="search-form">
+        <div class="search-form-container">
+
+            <mdb-icon fas icon="search" aria-hidden="true"></mdb-icon>
+            <input 
+            [(ngModel)]='this.searchForm.name' 
+            pattern="[a-zA-Z ]*"
+            [class.invalid-field]="form.submitted && form.invalid"
+            name="name" 
+            type="text" 
+            placeholder="Buscar"
+            class="form-control form-control-lg ml-3 w-100"
+            mdbInput>
+        </div>
+        <div *ngIf="form.submitted && form.invalid" class="msg field-error">
+            formato invalido
+        </div>
+    </div>
+    <div class="filter especialidad md-form">
+        <!-- <mdb-select-2 
+            [(ngModel)] = "this.searchForm.especialidadIdList"
+            name="especialidadIdList"
+            searchable="search"
+            [allowClear]="true"
+            [multiple]="true" 
+            [placeholder]="'Seleccionar Especialidad'"
+            label="Especialidad">
+            <mdb-select-option 
+                *ngFor="let option of especialidadOptions" 
+                [value]="option.id">{{ option.name }}</mdb-select-option>
+        </mdb-select-2> -->
+    </div>
+
+    <div *ngIf='!minified' class="md-form filter delegacion">
+        <input 
+            [(ngModel)]='this.searchForm.delegacionId' 
+            name="delegacionId" 
+            type="text" 
+            class="form-control" placeholder="Delegacion">
+    </div>
+
+
+    <div class="form-group search">
+        <button [disabled]="form.submitted && form.invalid" type="submit" class="btn btn-primary">Buscar</button>
+    </div>
+</form>
+
+<div class="container search-results">
+    <div *ngIf="postError && !loadingSearchResults" [class.field-error]="form.submitted && postError">
+        {{ postErrorMessage }}
+    </div>
+
+    <div [hidden]="!loadingSearchResults">
+        Cargando...
+    </div>
+
+    <div [hidden]="loadingSearchResults">
+        <ul>
+            <li *ngFor="let asociado of searchResults">
+                {{asociado}}
+            </li>
+        </ul>
+    </div>
+</div>
+

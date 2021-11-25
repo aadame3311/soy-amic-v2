@@ -1,0 +1,20 @@
+<form #form="ngForm" target="SearchResultsComponent" action="" (submit)="searchSubmit(form, $event)">
+    <div class="rounded-pill input">
+        <i *ngIf="!showAutoComplete" class="icon mr-1 fas fa-search"></i>
+        <input 
+        (focus)="handleFocus(true)"
+        (focusout)="handleFocus(false)"
+        [(ngModel)]="this.searchForm.name" ngModel 
+        name="name" 
+        class="search-input" 
+        type="text" 
+        placeholder="Buscar AMIC"
+        autocomplete="off"
+        >
+    </div>
+
+    <app-autocomplete 
+        (onAutocompleteClick)="handleAutocompleteClick(form, $event)"
+        [autocompleteList]="recentSearches" 
+        [isVisible]="showAutoComplete"></app-autocomplete>
+</form>

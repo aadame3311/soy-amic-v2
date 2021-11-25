@@ -1,0 +1,39 @@
+
+form {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto;
+    column-gap: 16px;
+    row-gap: 0;
+    grid-template-areas: 
+        "search search search search search search"
+        "filter-especialidad filter-especialidad filter-especialidad filter-delegacion filter-delegacion filter-delegacion"
+        ". . . . . button"
+        ;
+        
+}
+.search-form {
+    grid-area: search;
+  
+    width: 100%;
+}
+
+.search-form-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+.filter.especialidad { grid-area: filter-especialidad; }
+.filter.delegacion { grid-area: filter-delegacion ;}
+
+.search { grid-area: button; }
+.search button {width: 100%;}
+.search-results {
+    margin-top: 16px;
+}
+.ng-tns-c153-0.ng-star-inserted {
+    margin-left: 30px;
+}
